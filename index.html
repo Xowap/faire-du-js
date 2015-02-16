@@ -314,7 +314,7 @@ function get(num) {
             <section>
                 <h2>Préférez les syntaxes sans confusion</h2>
 
-                <pre><code data-trim>
+                <pre><code data-trim class="javascript">
 // Returns undefined
 return
 {
@@ -325,6 +325,40 @@ return
 return {
     ok: true
 }
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>«&nbsp;Ça n'arrive presque jamais&nbsp;»</h2>
+                <h3 class="fragment">C'est une autre manière de dire que ça arrive</h3>
+            </section>
+
+            <section>
+                <h2>Un bon style fait de meilleurs programmes</h2>
+                <h3>Ce n'est pas une question d'expression personnelle</h3>
+            </section>
+
+            <section>
+                <h2>LESROMAINSPARLAIENTLATIN</h2>
+                <h3 class="fragment">Mais les copistes ont inventé les minuscules et les espaces</h3>
+            </section>
+
+            <section>
+                <h2>Faut-il un espace&nbsp;?</h2>
+                <h3>Utilisons-le pour repérer les fonctions</h3>
+
+                <pre><code data-trim class="javascript">
+// Good
+var stuff = function () { ...
+if (true) { ...
+function foo(foo, bar) { ...
+foo(arg1, arg2);
+
+// Bad
+foo ();
+return(a+b);
+if(a ===b) { ...
+function(x) {...
                 </code></pre>
             </section>
         </section>
