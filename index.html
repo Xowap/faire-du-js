@@ -361,47 +361,46 @@ function(x) {...
                     <li>Syndrome des options désactivées</li>
                 </ul>
             </section>
-        </section>
 
-        <section>
-            <h2>use strict</h2>
+            <section>
+                <h2>use strict</h2>
 
-            <ul>
-                <li>Ajout d'ES5</li>
-                <li>Activé avec une chaîne <code>'use strict';</code></li>
-                <li>Quand on se trompe, ça plante</li>
-                <li>Compatible avec ES3</li>
-                <li>Et d'autres changements</li>
-            </ul>
-        </section>
+                <ul>
+                    <li>Ajout d'ES5</li>
+                    <li>Activé avec une chaîne <code>'use strict';</code></li>
+                    <li>Quand on se trompe, ça plante</li>
+                    <li>Compatible avec ES3</li>
+                    <li>Et d'autres changements</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>stupidity</h2>
+            <section>
+                <h2>stupidity</h2>
 
-            <ul>
-                <li>Interdiction des méthodes bloquantes</li>
-                <li>Car bloque l'interface</li>
-            </ul>
-        </section>
+                <ul>
+                    <li>Interdiction des méthodes bloquantes</li>
+                    <li>Car bloque l'interface</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>inefficient subscripting</h2>
+            <section>
+                <h2>inefficient subscripting</h2>
 
-            <ul>
-                <li>Accès aux membres des objets</li>
-                <li><strong>Mauvais</strong>&nbsp;: <code>o['foo']</code></li>
-                <li><strong>Bon</strong>&nbsp;: <code>o.foo</code></li>
-                <li>Aide le compilateur</li>
-            </ul>
-        </section>
+                <ul>
+                    <li>Accès aux membres des objets</li>
+                    <li><strong>Mauvais</strong>&nbsp;: <code>o['foo']</code></li>
+                    <li><strong>Bon</strong>&nbsp;: <code>o.foo</code></li>
+                    <li>Aide le compilateur</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>many vars per function</h2>
+            <section>
+                <h2>many vars per function</h2>
 
-            <div>
-                <p>Piège&nbsp;!</p>
+                <div>
+                    <p>Piège&nbsp;!</p>
 
-                <pre><code data-trim>
+                    <pre><code data-trim>
 function foo() {
     var a;
 
@@ -410,13 +409,13 @@ function foo() {
         console.log(b);
     }
 }
-                </code></pre>
-            </div>
+                    </code></pre>
+                </div>
 
-            <div class="fragment">
-                <p>Équivalent</p>
+                <div class="fragment">
+                    <p>Équivalent</p>
 
-                <pre><code data-trim>
+                    <pre><code data-trim>
 function foo() {
     var a, b, i;
 
@@ -425,63 +424,63 @@ function foo() {
         console.log(b);
     }
 }
-                </code></pre>
-            </div>
-        </section>
+                    </code></pre>
+                </div>
+            </section>
 
-        <section>
-            <h2>messy white space</h2>
+            <section>
+                <h2>messy white space</h2>
 
-            <p>Syndrôme des copier/coller et des éditeurs mal configurés</p>
+                <p>Syndrôme des copier/coller et des éditeurs mal configurés</p>
 
-            <ul>
-                <li>Identation incohérente</li>
-                <li>Affichage variable selon l'IDE</li>
-                <li>Risque de diff dans un commit</li>
-                <li>Toute l'équipe doit avoir la mếme configuration
-                    <ul>
-                        <li>Taille d'une tabulation</li>
-                        <li>Espaces vs. Tabulations</li>
-                        <li>Effaçage des caractères blanc en fin de ligne</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+                <ul>
+                    <li>Identation incohérente</li>
+                    <li>Affichage variable selon l'IDE</li>
+                    <li>Risque de diff dans un commit</li>
+                    <li>Toute l'équipe doit avoir la mếme configuration
+                        <ul>
+                            <li>Taille d'une tabulation</li>
+                            <li>Espaces vs. Tabulations</li>
+                            <li>Effaçage des caractères blanc en fin de ligne</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>unfiltered <code>for in</code></h2>
+            <section>
+                <h2>unfiltered <code>for in</code></h2>
 
-            <p>Problème avec <code>for (x in myVar)</code></p>
+                <p>Problème avec <code>for (x in myVar)</code></p>
 
-            <ul>
-                <li>Devrait lister les propriétés de <code>myVar</code></li>
-                <li>Problème en cas de hijack du prototype</li>
-                <li>Dans le doute, utiliser la méthode <code>hasOwnProperty()</code></li>
-            </ul>
+                <ul>
+                    <li>Devrait lister les propriétés de <code>myVar</code></li>
+                    <li>Problème en cas de hijack du prototype</li>
+                    <li>Dans le doute, utiliser la méthode <code>hasOwnProperty()</code></li>
+                </ul>
 
-            <p>Mauvais&nbsp;:</p>
+                <p>Mauvais&nbsp;:</p>
 
-                <pre><code data-trim>
+                    <pre><code data-trim>
 for (x in myVar) {
     console.log(x);
 }
-                </code></pre>
+                    </code></pre>
 
-            <p>Bon&nbsp;:</p>
+                <p>Bon&nbsp;:</p>
 
-                <pre><code data-trim>
+                    <pre><code data-trim>
 for (x in myVar) {
     if (myVar.hasOwnProperty(x)) {
         console.log(x);
     }
 }
-                </code></pre>
-        </section>
+                    </code></pre>
+            </section>
 
-        <section>
-            <h2>uncapitalized constructors</h2>
+            <section>
+                <h2>uncapitalized constructors</h2>
 
-            <pre><code data-trim>
+                <pre><code data-trim>
 function foo() {
     console.log('bar');
 }
@@ -498,46 +497,46 @@ function Obj() {
 }
 
 obj = new Obj();
-            </code></pre>
+                </code></pre>
 
-            <ul>
-                <li>Différencier fonction et constructeur</li>
-                <li>Pas de limitation par le langage</li>
-                <li>Usage d'une convention</li>
-            </ul>
-        </section>
+                <ul>
+                    <li>Différencier fonction et constructeur</li>
+                    <li>Pas de limitation par le langage</li>
+                    <li>Usage d'une convention</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>dangling _ in identifiers</h2>
+            <section>
+                <h2>dangling _ in identifiers</h2>
 
-            <ul>
-                <li><code>this._privateProperty</code> est mauvais</li>
-                <li>D'autres moyens existent</li>
-                <li>Interdiction de cette convention for forcer les bons usages</li>
-                <li><em>cf</em> la section Design Patterns</li>
-            </ul>
-        </section>
+                <ul>
+                    <li><code>this._privateProperty</code> est mauvais</li>
+                    <li>D'autres moyens existent</li>
+                    <li>Interdiction de cette convention for forcer les bons usages</li>
+                    <li><em>cf</em> la section Design Patterns</li>
+                </ul>
+            </section>
 
-        <section>
-            <h2><code>++</code> et <code>--</code></h2>
+            <section>
+                <h2><code>++</code> et <code>--</code></h2>
 
-            <ul>
-                <li><code>i+++j</code></li>
-                <li>La syntaxe est ambigue</li>
-                <li>Autant ne pas l'utiliser</li>
-                <li><strong>Mieux&nbsp;:</strong> <code>i += 1</code></li>
-            </ul>
-        </section>
+                <ul>
+                    <li><code>i+++j</code></li>
+                    <li>La syntaxe est ambigue</li>
+                    <li>Autant ne pas l'utiliser</li>
+                    <li><strong>Mieux&nbsp;:</strong> <code>i += 1</code></li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>continue</h2>
+            <section>
+                <h2>continue</h2>
 
-            <ul>
-                <li>Porte à confusion</li>
-                <li>Question performance, cf slide précédente</li>
-            </ul>
+                <ul>
+                    <li>Porte à confusion</li>
+                    <li>Question performance, cf slide précédente</li>
+                </ul>
 
-            <pre><code data-trim class="javascript">
+                <pre><code data-trim class="javascript">
 // Bad
 while (someCondition) {
     // Do Stuff
@@ -557,13 +556,13 @@ while (someCondition) {
         // Do Other Stuff
     }
 }
-            </code></pre>
-        </section>
+                </code></pre>
+            </section>
 
-        <section>
-            <h2>== and !=</h2>
+            <section>
+                <h2>== and !=</h2>
 
-            <pre><code data-trim class="javascript">
+                <pre><code data-trim class="javascript">
 // Bad
 if (1 == '1') {
     // Do Stuff
@@ -573,22 +572,23 @@ if (1 == '1') {
 if (1 === parseInt('1', 10)) {
     // Do Stuff
 }
-            </code></pre>
+                </code></pre>
 
-            <ul>
-                <li>Cause bugs et failles de sécurité</li>
-                <li>Soyez sûrs de vous, utilisz <code>===</code></li>
-            </ul>
-        </section>
+                <ul>
+                    <li>Cause bugs et failles de sécurité</li>
+                    <li>Soyez sûrs de vous, utilisz <code>===</code></li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>eval</h2>
+            <section>
+                <h2>eval</h2>
 
-            <ul>
-                <li>Il n'y a aucune raison d'utiliser <code>eval()</code></li>
-                <li>Il n'y a aucune raison d'utiliser <code>eval()</code></li>
-                <li>Non aucune.</li>
-            </ul>
+                <ul>
+                    <li>Il n'y a aucune raison d'utiliser <code>eval()</code></li>
+                    <li>Il n'y a aucune raison d'utiliser <code>eval()</code></li>
+                    <li>Non aucune.</li>
+                </ul>
+            </section>
         </section>
     </div>
 </div>
