@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Javascript - La légende d'un empire</title>
+    <title>Faire du Javascript &mdash; Qui ait la classe</title>
 
     <meta name="description" content="Une présentation sur la qualité de code Javascript">
     <meta name="author" content="Rémy Sanchez">
@@ -43,7 +43,7 @@
         <section>
             <h1>Faire du Javascript</h1>
 
-            <h3>Qui soit pas trop moisi</h3>
+            <h3>Qui ait la classe</h3>
 
             <p>
                 <small>
@@ -193,6 +193,23 @@
             </section>
         </section>
 
+        <section>
+            <h2>Je n'aime pas Javascript</h2>
+
+            <ul>
+                <li>
+                    Mais il est suffisant
+                    <ul>
+                        <li>Turing-complet</li>
+                        <li>Toujours mieux que Brainfuck</li>
+                    </ul>
+                </li>
+                <li>Et il est partout</li>
+                <li>Et pas si mauvais</li>
+                <li>On passe plus de temps à réfléchir qu'à coder</li>
+            </ul>
+        </section>
+
         <section data-background="img/terminator.jpg">
             <h2>Javascript Vous Déteste</h2>
             <h3 class="fragment">Ne soyez pas ridicules</h3>
@@ -280,6 +297,20 @@ function get(num) {
 
                 <img class="stretch" src="img/perfgraph.svg" alt=""/>
             </section>
+
+            <section>
+                <h2>Complexité algorithmique</h2>
+
+                <div id="algo-complexity" class="stretch"></div>
+            </section>
+            
+            <section>
+                <h2>Démo Optimisation</h2>
+
+                <p>
+                    Démo sur <a href="http://codepen.io/Xowap/pen/NPYNay?editors=101" target="_blank">CodePen</a>
+                </p>
+            </section>
         </section>
 
         <section>
@@ -346,6 +377,11 @@ function(x) {...
         </section>
 
         <section>
+            <section>
+                <h2>Quelqu'un a-t-il déjà choisi pour moi ?</h2>
+                <h3>Et est-ce que je peux vérifier mon code automatiquement ?</h3>
+            </section>
+
             <section data-background="img/magical.jpg">
                 <h1>jslint</h1>
                 <h3>Tadjaaaaa&nbsp;!</h3>
@@ -359,6 +395,32 @@ function(x) {...
                     <li>Très strict</li>
                     <li>Il va vous vexer</li>
                     <li>Syndrome des options désactivées</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Exemple</h2>
+
+                <iframe src="http://www.jslint.com/" frameborder="0" class="stretch"></iframe>
+            </section>
+
+            <section>
+                <h2>Utiliser jslint en vrai</h2>
+
+                <ul>
+                    <li>L'interface web est peu pratique</li>
+                    <li>Il existe un outil ligne de commande</li>
+                    <li>De nombreux IDE intègrent directement jslint</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Mais jslint, c'est pour les extrêmistes</h2>
+
+                <ul>
+                    <li>Oui</li>
+                    <li>Il faut être extrêmiste du code</li>
+                    <li>Moins de syntaxe = Moins de prise de tête</li>
                 </ul>
             </section>
 
@@ -587,14 +649,88 @@ if (1 === parseInt('1', 10)) {
                     <li>Il n'y a aucune raison d'utiliser <code>eval()</code></li>
                     <li>Il n'y a aucune raison d'utiliser <code>eval()</code></li>
                     <li>Non aucune.</li>
+                    <li>eval() is evil!</li>
                 </ul>
             </section>
+        </section>
+
+        <section>
+            <h2>Les design patterns</h2>
+        </section>
+
+        <section>
+            <h2>Manger à l'étranger</h2>
         </section>
     </div>
 </div>
 
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
+
+<script type="text/javascript"
+        src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+
+<script>
+    (function () {
+        var drawComplexityChart;
+
+        drawComplexityChart = function () {
+            var rows = [['n', 'O(n)', 'O(n²)']],
+                data,
+                i,
+                chart,
+                textStyle = {
+                    fontSize: 24,
+                    color: 'white'
+                },
+                options = {
+                    backgroundColor: 'transparent',
+                    legend: {
+                        position: 'right',
+                        textStyle: textStyle
+                    },
+                    hAxis: {
+                        gridlines: {
+                            count: 4,
+                            color: 'transparent'
+                        },
+                        textStyle: textStyle
+                    },
+                    vAxis: {
+                        gridlines: {
+                            count: 5,
+                            color: 'transparent'
+                        },
+                        textStyle: textStyle
+                    },
+                    series: {
+                        0: {
+                            lineWidth: 5
+                        },
+                        1: {
+                            lineWidth: 5
+                        }
+                    }
+                };
+
+            for (i = 0; i <= 10; i += 1) {
+                rows.push([i, i, Math.pow(i, 2)]);
+            }
+
+            data = google.visualization.arrayToDataTable(rows);
+
+            chart = new google.visualization.LineChart(document.getElementById('algo-complexity'));
+            chart.draw(data, options);
+        };
+        google.setOnLoadCallback(drawComplexityChart);
+    }());
+</script>
 
 <script>
 
