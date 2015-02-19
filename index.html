@@ -305,7 +305,7 @@ function get(num) {
 
                 <img class="stretch" src="img/complexity.svg" alt="" style="border: none; background: none; box-shadow: none;"/>
             </section>
-            
+
             <section>
                 <h2>Démo Optimisation</h2>
 
@@ -919,9 +919,19 @@ instance.method();
         <section>
             <h2>bower</h2>
 
-            <ul>
-                <li>bower</li>
-            </ul>
+            <p>Gestion des dépendances grâce à un fichier <code>bower.json</code> à la racine du projet</p>
+
+            <pre><code data-trim class="javascript">
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "main": "path/to/main.css",
+  "dependencies": {
+    "&lt;jquery&gt;": "&lt;2.1.3&gt;",
+    "&lt;bootstrap&gt;": "&lt;3.3.2&gt;"
+  },
+}
+                </code></pre>
         </section>
 
         <section>
@@ -951,6 +961,81 @@ for filename in list
                         <li>Moins de caractères</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Éditeurs</h2>
+
+            <p>À utiliser pour lire un fichier ou faire une modification rapide.</p>
+
+            <div class="fragment">
+                <h4>Vim</h4>
+
+                <ul>
+                    <li>Rapide</li>
+                    <li>Puissant</li>
+                    <li>Grosse learning-curve</li>
+                    <li>Complexe à configurer</li>
+                </ul>
+            </div>
+
+            <div class="row spacing-up">
+                <div class="col-sm-6 fragment">
+                    <h4>Notepad++</h4>
+
+                    <ul>
+                        <li>Minimum vital</li>
+                        <li>Fait son travail</li>
+                        <li>Limité à Windows</li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 fragment">
+                    <h4>Sublime</h4>
+
+                    <ul>
+                        <li>Swag</li>
+                        <li>Le nouveaux Vim</li>
+                        <li>Et intuitif</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>IDE</h2>
+
+            <div class="row">
+                <div class="col-sm-6 fragment">
+                    <h4>Eclipse</h4>
+
+                    <ul>
+                        <li>Lourd</li>
+                        <li>Buggué</li>
+                        <li>Fonctions basiques</li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-6 fragment">
+                    <h4>Netbeans</h4>
+
+                    <ul>
+                        <li>Lourd</li>
+                        <li>Moche</li>
+                        <li>Fonctions basiques</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fragment spacing-up">
+                <h4>Intellij WebStorm <em>& co</em></h4>
+
+                <ul>
+                    <li>Un peu lourd</li>
+                    <li>Stylé</li>
+                    <li>Mêmes les fonctions dont vous n'aviez pas rêvé</li>
+                </ul>
             </div>
         </section>
     </div>
