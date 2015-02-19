@@ -669,7 +669,224 @@ if (1 === parseInt('1', 10)) {
         </section>
 
         <section>
-            <h2>Manger à l'étranger</h2>
+            <section>
+                <h2>IIFE</h2>
+
+                <p>Immediately-Invoked Function Expression</p>
+
+                <p><em>(Expression de Fonction Immédiatement Invoquée)</em></p>
+
+                <pre><code data-trim class="javascript">
+(function () {
+    // Run some code
+}());
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Activer <code>'use strict'</code></h2>
+
+                <pre><code data-trim class="javascript">
+(function () {
+    'use strict';
+    // Run some code
+}());
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Avoir un scope privé</h2>
+
+                <pre><code data-trim class="javascript">
+// Code here
+
+(function () {
+    'use strict';
+
+    var foo, bar;
+}());
+
+// Code there
+                </code></pre>
+            </section>
+        </section>
+
+        <section>
+            <section data-background="img/indian-food.jpg">
+                <h2>Manger à l'étranger</h2>
+
+                <ul>
+                    <li>Aller dans un pays végétarien</li>
+                    <li>Avec des coupures d'électricité</li>
+                    <li>Sans garantie de chaîne du froid</li>
+                    <li>Devrais-je manger un steak&nbsp;?</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Javascript n'est pas Java</h2>
+
+                <ul>
+                    <li>Pas de steak, pas de classes</li>
+                    <li>Manger végétarien c'est bon pour le karma</li>
+                    <li>Mieux vaut s'y faire</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Scope</h2>
+
+                <p>En JS, le scope se base sur les fonctions.</p>
+
+                <pre><code data-trim class="javascript">
+var a;
+
+function foo() {
+    var b;
+
+    // I can see a and b
+}
+
+foo();
+
+// I can see a
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Opérateur <code>new</code></h2>
+
+                <pre><code data-trim class="javascript">
+var Obj;
+
+Obj = function () {};
+
+Obj.prototype.foo = 'bar';
+
+Obj.prototype.tellFoo = function () {
+    console.log(this.foo);
+}
+
+instance = new Obj();
+instance.tellFoo();
+
+>> "bar"
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Prototype</h2>
+
+                <pre><code data-trim class="javascript">
+var Obj;
+
+Obj = function () {};
+
+Obj.prototype.prop1 = 'vanilla';
+Obj.prototype.prop2 = 'vanilla';
+
+instance = new Obj();
+
+Obj.prototype.prop1 = 'changed';
+instance.prop2 = 'changed';
+
+console.log(instance.prop1);
+>> "changed"
+
+console.log(Obj.prototype.prop2);
+>> "vanilla"
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Membres privées</h2>
+
+                <pre><code data-trim class="javascript">
+var Obj;
+
+Obj = function () {
+        // Variables
+    var priv = 42,
+
+        // Methods
+        method;
+
+    method = function () {
+        console.log(priv);
+    }
+};
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Que devient le prototype&nbsp;?</h2>
+
+                <pre><code data-trim class="javascript">
+var Obj;
+
+Obj = function () {
+        // Variables
+    var self = this,
+        priv = 42,
+
+        // Methods
+        method;
+
+    method = function () {
+        console.log(priv);
+    }
+};
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Rendre une méthode publique</h2>
+
+                <pre><code data-trim class="javascript">
+var Obj;
+
+Obj = function () {
+        // Variables
+    var self = this,
+        priv = 42,
+
+        // Methods
+        method;
+
+    method = function () {
+        console.log(priv);
+    }
+
+    self.method = method;
+};
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Exécuter du code dans le constructeur</h2>
+
+                <pre><code data-trim class="javascript">
+Obj = function (value) {
+    var self = this,
+        priv,
+        method;
+
+    method = function () {
+        console.log(priv);
+    }
+
+    self.method = method;
+
+    (function () {
+        priv = value / 2;
+    }());
+};
+
+instance = new Obj(42);
+instance.method();
+>> 21
+                </code></pre>
+            </section>
         </section>
     </div>
 </div>
