@@ -17,6 +17,8 @@
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="css/extra.css">
+    <link rel="stylesheet" href="css/flexboxgrid.css">
 
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -92,8 +94,8 @@
 
         <section>
             <section>
-                <h2>Javascript</h2>
-                <h3>Le Langage Incompris</h3>
+                <h1>Javascript</h1>
+                <h2>Le Langage Incompris</h2>
             </section>
 
             <section>
@@ -217,7 +219,7 @@
 
         <section>
             <section>
-                <h2>La Syntaxe</h2>
+                <h1>La Syntaxe</h1>
             </section>
 
             <section>
@@ -656,7 +658,7 @@ if (1 === parseInt('1', 10)) {
 
         <section>
             <section>
-                <h2>Les design patterns</h2>
+                <h1>Les design patterns</h1>
             </section>
             <section>
                 <h2>Combien de caractères pour écrire tout code JS&nbsp;?</h2>
@@ -887,6 +889,69 @@ instance.method();
 >> 21
                 </code></pre>
             </section>
+        </section>
+
+        <section>
+            <h1>Les Outils</h1>
+        </section>
+
+        <section>
+            <h2>Qualité de code</h2>
+
+            <ul>
+                <li>
+                    jslint
+                    <ul>
+                        <li>Empêche les erreurs</li>
+                    </ul>
+                </li>
+                <li>
+                    jshint
+                    <ul>
+                        <li>Petit joueur</li>
+                        <li>Détecte les erreurs</li>
+                        <li>Moins mauvais que rien</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>bower</h2>
+
+            <ul>
+                <li>bower</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>CoffeeScript</h2>
+
+            <p>«&nbsp;CoffeeScript est un petit langage qui se compile en Javascript.&nbsp;»</p>
+
+            <pre><code data-trim>
+for filename in list
+  do (filename) ->
+    fs.readFile filename, (err, contents) ->
+      compile filename, contents.toString()
+            </code></pre>
+
+            <div class="row spacing-up">
+                <div class="col-sm-6 fragment">
+                    <h4>Contre</h4>
+                    <ul>
+                        <li>Syntaxe ambigüe</li>
+                        <li>Étape de compilation</li>
+                        <li>Maîtrise du JS exigée</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 fragment">
+                    <h4>Pour</h4>
+                    <ul>
+                        <li>Moins de caractères</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </div>
 </div>
