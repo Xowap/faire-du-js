@@ -108,6 +108,8 @@
                 <pre class="fragment"><code>> '5' + + '5'</code></pre>
                 <pre class="fragment"><code>55</code></pre>
             </section>
+
+            <section data-background="img/duck.jpg"></section>
         </section>
 
         <section>
@@ -232,6 +234,8 @@
                 <pre class="fragment"><code>> '5' + - + - - + - - + + - + - + - + - - - '-2'</code></pre>
                 <pre class="fragment"><code>'52'</code></pre>
             </section>
+
+            <section data-background="img/wat.jpg"></section>
         </section>
 
         <section>
@@ -375,6 +379,16 @@ return(a+b);
 if(a ===b) { ...
 function(x) {...
                 </code></pre>
+            </section>
+
+            <section>
+                <h2>Simple ou double guillement&nbsp;?</h2>
+
+                <ul>
+                    <li>Aucune différence de performance</li>
+                    <li>Toujours utiliser le même pour les CTRL+F</li>
+                    <li><code>'</code> est plus simple à faire que <code>"</code> sur un QWERTY</li>
+                </ul>
             </section>
         </section>
 
@@ -1037,6 +1051,44 @@ for filename in list
                     <li>Mêmes les fonctions dont vous n'aviez pas rêvé</li>
                 </ul>
             </div>
+        </section>
+
+        <section>
+            <h2>Tests Unitaires</h2>
+
+            <ul>
+                <li>Oui, c'est utile</li>
+                <li>Oui, ça fait gagner du temps</li>
+                <li>
+                    Librairies
+
+                    <ul>
+                        <li>Jasmine&nbsp;: coder les tests en tant que tel</li>
+                        <li>Karma&nbsp;: exécuter les tests</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <section>
+                <h1>La Documentation</h1>
+            </section>
+
+            <section>
+                <h2>Un peu de typage</h2>
+
+                <pre class="fragment"><code>> Array(12).join('wat')</code></pre>
+                <pre class="fragment"><code>'watwatwatwatwatwatwatwatwatwatwat'</code></pre>
+                <pre class="fragment"><code>> Array(12).join('wat' + 1)</code></pre>
+                <pre class="fragment"><code>'wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1wat1'</code></pre>
+                <pre class="fragment"><code>> Array(12).join('wat' - 1)</code></pre>
+                <pre class="fragment"><code>> Array(12).join('wat' - 1) + ' Batman!'</code></pre>
+                <pre class="fragment"><code>'NaNNaNNaNNaNNaNNaNNaNNaNNaNNaNNaN Batman!'</code></pre>
+            </section>
+
+            <section data-background="img/watman.jpg">
+            </section>
         </section>
     </div>
 </div>
