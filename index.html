@@ -301,7 +301,7 @@ function get(num) {
             <section>
                 <h2>Complexité algorithmique</h2>
 
-                <div id="algo-complexity" class="stretch"></div>
+                <img class="stretch" src="img/complexity.svg" alt="" style="border: none; background: none; box-shadow: none;"/>
             </section>
             
             <section>
@@ -894,69 +894,69 @@ instance.method();
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
 
-<script type="text/javascript"
-        src="https://www.google.com/jsapi?autoload={
-            'modules':[{
-              'name':'visualization',
-              'version':'1',
-              'packages':['corechart']
-            }]
-          }"></script>
+<!--<script type="text/javascript"-->
+        <!--src="https://www.google.com/jsapi?autoload={-->
+            <!--'modules':[{-->
+              <!--'name':'visualization',-->
+              <!--'version':'1',-->
+              <!--'packages':['corechart']-->
+            <!--}]-->
+          <!--}"></script>-->
 
 <script>
-    (function () {
-        var drawComplexityChart;
-
-        drawComplexityChart = function () {
-            var rows = [['n', 'O(n)', 'O(n²)']],
-                data,
-                i,
-                chart,
-                textStyle = {
-                    fontSize: 24,
-                    color: 'white'
-                },
-                options = {
-                    backgroundColor: 'transparent',
-                    legend: {
-                        position: 'right',
-                        textStyle: textStyle
-                    },
-                    hAxis: {
-                        gridlines: {
-                            count: 4,
-                            color: 'transparent'
-                        },
-                        textStyle: textStyle
-                    },
-                    vAxis: {
-                        gridlines: {
-                            count: 5,
-                            color: 'transparent'
-                        },
-                        textStyle: textStyle
-                    },
-                    series: {
-                        0: {
-                            lineWidth: 5
-                        },
-                        1: {
-                            lineWidth: 5
-                        }
-                    }
-                };
-
-            for (i = 0; i <= 10; i += 1) {
-                rows.push([i, i, Math.pow(i, 2)]);
-            }
-
-            data = google.visualization.arrayToDataTable(rows);
-
-            chart = new google.visualization.LineChart(document.getElementById('algo-complexity'));
-            chart.draw(data, options);
-        };
-        google.setOnLoadCallback(drawComplexityChart);
-    }());
+//    (function () {
+//        var drawComplexityChart;
+//
+//        drawComplexityChart = function () {
+//            var rows = [['n', 'O(n)', 'O(n²)']],
+//                data,
+//                i,
+//                chart,
+//                textStyle = {
+//                    fontSize: 24,
+//                    color: 'white'
+//                },
+//                options = {
+//                    backgroundColor: 'transparent',
+//                    legend: {
+//                        position: 'right',
+//                        textStyle: textStyle
+//                    },
+//                    hAxis: {
+//                        gridlines: {
+//                            count: 4,
+//                            color: 'transparent'
+//                        },
+//                        textStyle: textStyle
+//                    },
+//                    vAxis: {
+//                        gridlines: {
+//                            count: 5,
+//                            color: 'transparent'
+//                        },
+//                        textStyle: textStyle
+//                    },
+//                    series: {
+//                        0: {
+//                            lineWidth: 5
+//                        },
+//                        1: {
+//                            lineWidth: 5
+//                        }
+//                    }
+//                };
+//
+//            for (i = 0; i <= 10; i += 1) {
+//                rows.push([i, i, Math.pow(i, 2)]);
+//            }
+//
+//            data = google.visualization.arrayToDataTable(rows);
+//
+//            chart = new google.visualization.LineChart(document.getElementById('algo-complexity'));
+//            chart.draw(data, options);
+//        };
+//        google.setOnLoadCallback(drawComplexityChart);
+//    }());
 </script>
 
 <script>
