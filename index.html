@@ -193,7 +193,7 @@
 
             <section>
                 <h2>jslinux</h2>
-                <!--<iframe src="http://bellard.org/jslinux/" frameborder="0" class="stretch"></iframe>-->
+                <iframe src="http://bellard.org/jslinux/" frameborder="0" class="stretch"></iframe>
             </section>
         </section>
 
@@ -664,7 +664,7 @@ if (1 === parseInt('1', 10)) {
 
                 <ul>
                     <li>Cause bugs et failles de sécurité</li>
-                    <li>Soyez sûrs de vous, utilisz <code>===</code></li>
+                    <li>Soyez sûrs de vous, utilisez <code>===</code></li>
                 </ul>
             </section>
 
@@ -996,7 +996,24 @@ $(document).ready(function () {
         </section>
 
         <section>
-            <h1>Les Outils</h1>
+            <section>
+                <h1>Les Outils</h1>
+            </section>
+
+            <section>
+                <h2>Allez, du typage</h2>
+
+                <pre class="fragment javascript"><code>> [] + []</code></pre>
+                <pre class="fragment javascript"><code>''</code></pre>
+                <pre class="fragment javascript"><code>> [] + {}</code></pre>
+                <pre class="fragment javascript"><code>'[object Object]'</code></pre>
+                <pre class="fragment javascript"><code>> {} + []</code></pre>
+                <pre class="fragment javascript"><code>0</code></pre>
+                <pre class="fragment javascript"><code>> {} + {}</code></pre>
+                <pre class="fragment javascript"><code>NaN</code></pre>
+            </section>
+
+            <section data-background="img/wat2.jpg"></section>
         </section>
 
         <section>
@@ -1031,8 +1048,8 @@ $(document).ready(function () {
   "version": "1.0.0",
   "main": "path/to/main.css",
   "dependencies": {
-    "&lt;jquery&gt;": "&lt;2.1.3&gt;",
-    "&lt;bootstrap&gt;": "&lt;3.3.2&gt;"
+    "jquery": "2.1.3",
+    "bootstrap": "3.3.2"
   },
 }
                 </code></pre>
