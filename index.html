@@ -288,6 +288,16 @@ function get(num) {
                 </ul>
             </section>
 
+            <section>
+                <h2>Orthographe et sémantique</h2>
+
+                <ul>
+                    <li>Donner des noms qui ont du sens</li>
+                    <li>En anglais, vérifier la traduction</li>
+                    <li>Vérification orthographique évite fautes de frappe</li>
+                </ul>
+            </section>
+
             <section data-background="img/punchcard.jpg">
                 <h2>Mythe de l'économie de caractères</h2>
 
@@ -725,6 +735,24 @@ if (1 === parseInt('1', 10)) {
 // Code there
                 </code></pre>
             </section>
+
+            <section>
+                <h2>Faire des alias</h2>
+
+                <pre><code data-trim class="javascript">
+// Code here
+
+(function ($) {
+    'use strict';
+
+    $(document).ready(function () {
+        // Do something
+    });
+}(jQuery));
+
+// Code there
+                </code></pre>
+            </section>
         </section>
 
         <section>
@@ -902,6 +930,68 @@ instance = new Obj(42);
 instance.method();
 >> 21
                 </code></pre>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Le <em>callback hell</em></h2>
+
+                <pre><code data-trim class="javascript">
+(function () {
+    'use strict';
+
+    SuperAPI.initialize(function () {
+        SuperAPI.connect(function () {
+            SuperAPI.getPermission('stuff', function onSuccess() {
+                // Do what I want to do
+            }, function onFail() {
+                // Well, nothing happens
+            });
+        });
+    });
+}());
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Mettre à plat</h2>
+
+                <pre><code data-trim class="javascript">
+init = function () {
+    SuperAPI.connect(connect);
+};
+
+connect = function () {
+    SuperAPI.getPermission('stuff', permSuccess, permFail);
+};
+
+permSuccess = function () {
+    // Do stuff
+};
+
+permFail = function () {
+    connect();
+};
+
+SuperAPI.initialize(init);
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Utiliser des promesses</h2>
+
+                <p>La promesse la plus utilisée au monde</p>
+
+                <pre class="fragment"><code data-trim class="javascript">
+$(document).ready(function () {
+    // Do stuff
+});
+                </code></pre>
+
+                <p class="fragment">Permet d'exécuter du code après qu'une certaine action soit accomplie.</p>
+
+                <p class="fragment">Le sujet est trop vaste pour en parler en 2 minutes, mais creusez&nbsp;!</p>
             </section>
         </section>
 
@@ -1089,6 +1179,66 @@ for filename in list
 
             <section data-background="img/watman.jpg">
             </section>
+        </section>
+
+        <section>
+            <h2>Litérature</h2>
+
+            <p>Quelques livres que je n'ai pas lu</p>
+
+            <ul>
+                <li>JavaScript: The Definitive Guide <em>(éditions O'Reilly)</em></li>
+                <li>JavaScript: The Good Parts <em>(éditions O'Reilly)</em></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Référence en ligne</h2>
+
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/">MDN</a> (Mozilla Developer Network)</li>
+                <li><a href="http://www.webplatform.org/">WebPlatform</a> (mais encore incomplet)</li>
+                <li><b>Proscrire</b> <a href="http://www.w3schools.com/">W3Schools</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Autres resources</h2>
+
+            <blockquote>
+                <p>
+                    «&nbsp;Apprendre à programmer, c'est copier/coller les morceaux de code des autres jusqu'à
+                    les connaîtres par cœur&nbsp;»
+                </p>
+                <p style="text-align: right; width: 100%;">&mdash; Rémy Sanchez</p>
+            </blockquote>
+
+            <ul>
+                <li>Pour l'inspiration, <a href="http://codepen.io/">CodePen</a></li>
+                <li>Pour des reponses, <a href="http://stackoverflow.com/">Stack Overflow</a></li>
+            </ul>
+        </section>
+
+        <section data-background="img/got.jpg">
+            <h2>Pour apprendre l'anglais</h2>
+
+            <p><strong>Sans</strong> les sous-titres</p>
+
+            <ul>
+                <li>Game of Thrones</li>
+                <li>Homeland</li>
+                <li>House of Cards</li>
+                <li>True Detective</li>
+                <li>Stargate SG-1</li>
+                <li>Suits</li>
+                <li>How I Met Your Mother</li>
+                <li>Friends</li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Merci de votre attention&nbsp;!</h1>
+            <h3>Reste-t-il des questions&nbsp;?</h3>
         </section>
     </div>
 </div>
